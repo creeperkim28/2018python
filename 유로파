@@ -1,4 +1,4 @@
- import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import csv
 import numpy as np
 p = input('주기?')

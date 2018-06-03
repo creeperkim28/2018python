@@ -1,0 +1,35 @@
+ import matplotlib.pyplot as plt
+import csv
+import numpy as np
+p = input('주기?')
+f = open('가니메데.csv')
+t = input('초기위상?')
+n = input('sin 주기?')
+j = input('sin x축 평행이동?')
+J = float(j)
+N = float(n)
+data = csv.reader(f)
+a = 0
+x = []
+y = []
+for row in data :
+    if float(row[0]) > a:
+        a = float(row[0])
+    x.append(round((float(row[1]) % float(p)),3))
+    y.append(float(row[0]))
+A = abs(a)
+print('진폭:',A)
+s = np.arange(0.0,float(p),0.01)
+plt.rc( 'font',family = 'Malgun Gothic' )
+plt.figure(dpi = 300)
+plt.rcParams['axes.unicode_minus'] = False
+plt.plot(s, A * np.sin(N*np.pi*(s-J)) + float(t), label = 'sin 함수')
+plt.plot(x,y,'.', label = '가니메데')
+plt.legend(loc = 0)
+plt.show()
+-------------------------------------------------------------------------------------------------
+결과:
+주기?7.165
+초기위상?-0.015
+sin 주기?0.285
+sin x축 평행이동?

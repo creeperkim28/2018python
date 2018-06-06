@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import numpy as np
+plt.show()
 import csv
 a = 0.1215
 A = 4.94
@@ -16,13 +16,13 @@ dd = -0.015
 days = input("몇일 뒤의 위치를 알고 싶나요?")
 plt.plot(0,0,'o',label = "목성")
 plt.rc( 'font',family = 'Malgun Gothic' )
-Xa = float(A) * np.sin(a*np.pi*float(days))+float(aa)
+Xa = float(A) * np.sin(a*np.pi*(float(days)))+float(aa)
 plt.plot(Xa,0,'.',label = "칼리스토")
-Xb = float(B) * np.sin(b*np.pi*float(days))+float(bb)
+Xb = float(B) * np.sin(b*np.pi*(float(days)+0.125))+float(bb)
 plt.plot(Xb,0,'.',label = "이오")
-Xc = float(C) * np.sin(c*np.pi*float(days))+float(cc)
+Xc = float(C) * np.sin(c*np.pi*(float(days)-1.533))+float(cc)
 plt.plot(Xc,0,'.',label = "유로파")
-Xd = float(D) * np.sin(d*np.pi*float(days))+float(dd)
+Xd = float(D) * np.sin(d*np.pi*(float(days)-3))+float(dd)
 plt.plot(Xd,0,'.',label = "가니메데")
 plt.rcParams['axes.unicode_minus'] = False
 plt.legend(loc=0)
